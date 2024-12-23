@@ -14,16 +14,18 @@ public class DemoController {
     // CONSTRUCTOR INJECTION
 
     @Autowired
-    public DemoController(@Qualifier("tennisCoach") Coach theCoach){
+    public DemoController(@Qualifier("trackCoach") Coach theCoach){
+        System.out.println("In Constructor:"+getClass().getSimpleName());
         myCoach=theCoach;
     }
-
 
     // SETTER INJECTION
 //    @Autowired
 //    public void setCoach(Coach theCoach){
 //        myCoach=theCoach;
 //    }
+
+
     @GetMapping("/dailyWorkout")
     public String getDailyWorkout(){
         return myCoach.getDailyWorkout();
