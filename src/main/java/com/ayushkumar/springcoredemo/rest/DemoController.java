@@ -14,10 +14,10 @@ public class DemoController {
     // CONSTRUCTOR INJECTION
 
     @Autowired
-    public DemoController(@Qualifier("tennisCoach") Coach theCoach){
+    public DemoController(@Qualifier("trackCoach") Coach theCoach){
+        System.out.println("In Constructor:"+getClass().getSimpleName());
         myCoach=theCoach;
     }
-
 
     // SETTER INJECTION
 //    @Autowired
